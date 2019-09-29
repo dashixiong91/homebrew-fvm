@@ -8,8 +8,7 @@ class Fvm < Formula
   bottle :unneeded
 
   def install
-    prefix.install "fvm.sh", "fvm-exec"
-    prefix.install "init.sh", "fvm-init"
+    prefix.install "fvm.sh", "init.sh"
   end
 
   def caveats; <<~EOS
@@ -30,7 +29,7 @@ class Fvm < Formula
   end
 
   test do
-    output = pipe_output("#{prefix}/fvm-init 2>&1")
+    output = pipe_output("#{prefix}/init.sh 2>&1")
     assert_no_match /No such file or directory/, output
     assert_no_match /fvm: command not found/, output
   end
