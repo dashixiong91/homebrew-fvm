@@ -20,7 +20,7 @@ class Fvm < Formula
     configuration file:
 
       export FVM_DIR="$HOME/.fvm"
-      \. "#{opt_prefix}/init.sh"  # This loads fvm
+      \source "#{opt_prefix}/init.sh"  # This loads fvm
 
     You can set $FVM_DIR to any location.
 
