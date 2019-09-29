@@ -1,8 +1,8 @@
 class Fvm < Formula
   desc "Flutter SDK versions Manager"
   homepage "https://github.com/xinfeng-tech/fvm"
-  url "https://github.com/xinfeng-tech/fvm/archive/v1.0.3.tar.gz"
-  sha256 "5c2692e3af4e3420175b87b0a76e0943ba51df5af9db045fdaa498a2a43186b4"
+  url "https://github.com/xinfeng-tech/fvm/archive/v1.0.4.tar.gz"
+  sha256 "58eb1b3c318ed32ab5684ac68fdbe3d39a7963f7b8da91128f9643d9e4d90ed4"
   head "https://github.com/xinfeng-tech/fvm.git"
 
   bottle :unneeded
@@ -20,7 +20,7 @@ class Fvm < Formula
     configuration file:
 
       export FVM_DIR="$HOME/.fvm"
-      \source "#{opt_prefix}/init.sh"  # This loads fvm
+      source "#{opt_prefix}/init.sh"  # This loads fvm
 
     You can set $FVM_DIR to any location.
 
