@@ -4,7 +4,7 @@ set -e
 
 THIS_DIR="$(cd "$(if [[ "${0:0:1}" == "/" ]]; then echo "$(dirname $0)";else echo "$PWD/$(dirname $0)";fi)"; pwd)"
 
-VERSION="1.0.8"
+VERSION="1.0.9"
 DOWNLOAD_URL="https://github.com/xinfeng-tech/fvm/archive/v${VERSION}.tar.gz"
 FORMULA_FILE="${THIS_DIR}/fvm.rb"
 
