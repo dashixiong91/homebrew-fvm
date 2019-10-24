@@ -55,5 +55,6 @@ function main(){
   echo "sha256:${sha256}"
   git add .
   git commit -m "update: ${VERSION}"
+  git push
 }
 main
