@@ -2,7 +2,7 @@ class Fvm < Formula
   desc "Flutter SDK versions Manager"
   homepage "https://github.com/xinfeng-tech/fvm"
   url "https://github.com/xinfeng-tech/fvm/archive/v1.0.10.tar.gz"
-  sha256 ""
+  sha256 "703e64c6afc7c0708787fa05c93f5b07c8caaebba7039b0e161484cf5325112d"
   head "https://github.com/xinfeng-tech/fvm.git"
 
   bottle :unneeded
