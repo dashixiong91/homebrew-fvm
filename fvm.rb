@@ -8,7 +8,9 @@ class Fvm < Formula
   bottle :unneeded
 
   def install
-    prefix.install "fvm.sh", "init.sh"
+    libexec.install Dir["*"]
+    (bin/"fvm").write_env_script "#{libexec}/fvm.sh", :PREFIX => HOMEBREW_PREFIX
+    ("init.sh").write_env_script "#{libexec}/init.sh", :PREFIX => HOMEBREW_PREFIX
   end
 
   def caveats; <<~EOS
@@ -30,6 +32,8 @@ class Fvm < Formula
 
   test do
     output = pipe_output("#{prefix}/init.sh 2>&1")
+    assert_no_match /No such file or directory/, output
+    output = pipe_output("#{libexec}/fvm.sh 2>&1")
     assert_no_match /No such file or directory/, output
   end
 end
