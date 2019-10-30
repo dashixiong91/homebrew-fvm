@@ -1,16 +1,18 @@
 class Fvm < Formula
   desc "Flutter SDK versions Manager"
   homepage "https://github.com/xinfeng-tech/fvm"
-  url "https://github.com/xinfeng-tech/fvm/archive/v1.0.10.tar.gz"
-  sha256 "703e64c6afc7c0708787fa05c93f5b07c8caaebba7039b0e161484cf5325112d"
+  url "https://github.com/xinfeng-tech/fvm/archive/v1.1.0.tar.gz"
+  sha256 ""
   head "https://github.com/xinfeng-tech/fvm.git"
 
   bottle :unneeded
 
   def install
-    libexec.install Dir["*"]
+    libexec.install "package.json"
+    libexec.install Dir["libexec/*"]
     prefix.install_symlink libexec/"init.sh"
     (bin/"fvm").write_env_script "#{libexec}/fvm.sh", :PREFIX => HOMEBREW_PREFIX
+    inreplace "#{libexec}/package.json", '"installationMethod": "tar"', '"installationMethod": "homebrew"'
   end
 
   def caveats; <<~EOS
