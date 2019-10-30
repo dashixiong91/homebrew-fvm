@@ -9,8 +9,8 @@ class Fvm < Formula
 
   def install
     libexec.install Dir["*"]
+    prefix.install_symlink libexec/"init.sh"
     (bin/"fvm").write_env_script "#{libexec}/fvm.sh", :PREFIX => HOMEBREW_PREFIX
-    ("init.sh").write_env_script "#{libexec}/init.sh", :PREFIX => HOMEBREW_PREFIX
   end
 
   def caveats; <<~EOS
